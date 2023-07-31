@@ -2,7 +2,7 @@
 
 cli version of minesweeper
 
----Enter x, y, mode
+---Enter x, y, mode <br></br>
 ---Mode --> free try to find safe fields
         --> mine set/ unset mines on field
 
