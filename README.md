@@ -3,8 +3,8 @@
 cli version of minesweeper
 
 ---Enter x, y, mode <br></br>
----Mode --> free try to find safe fields
-        --> mine set/ unset mines on field
+---Mode --> free try to find safe fields <br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> mine set/ unset mines on field <br> </br>
 
 ```
 How many mines do you want on the field? 10
