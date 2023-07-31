@@ -1,8 +1,6 @@
 package minesweeper;
 import java.util.*;
 
-//all positions are stored as x,y
-
 public class Game {
     public Board playingBoard;
     private boolean end = false;
@@ -43,7 +41,7 @@ public class Game {
         playingBoard.setMinesPos(random);
 
         printBoard(playingBoard);
-        while (!end && !bombed) {
+        while (!bombed && !end) {
 
             System.out.print("Set/unset mines marks or claim a cell as free: ");
             try {
@@ -59,7 +57,9 @@ public class Game {
                 continue;
             }
             //checking if place contains a mine
-            bombed = isBombed(userInput.get(0), userInput.get(1));
+            if (mode!= Mode.MINE) {
+                bombed = isBombed(userInput.get(0), userInput.get(1));
+            }
 
             //initializing mode with a board and positions(x,y)
             mode.setBoard(playingBoard);
@@ -67,6 +67,7 @@ public class Game {
 
             //performing changes on board according to mode specified
             mode.performFunction();
+            System.out.println(foundMineNum);
 
             System.out.print("\n");
             printBoard(playingBoard);
@@ -88,7 +89,7 @@ public class Game {
 
     private boolean isEnd() {
         // if "." + "*" on board == total number of mines
-        return foundMineNum+ playingBoard.getElementNum(playingBoard.unexploredFieldSymbol) == playingBoard.minesNum;
+        return foundMineNum+ playingBoard.getElementNum(playingBoard.unexploredFieldSymbol) == playingBoard.minesNum || foundMineNum== playingBoard.minesNum;
     }
 
     private boolean isBombed(int x,int y) {
